@@ -1,0 +1,78 @@
+# The behavior of RuboCop can be controlled via the .rubocop.yml
+# configuration file. It makes it possible to enable/disable
+# certain cops (checks) and to alter their behavior if they accept
+# any parameters. The file can be placed either in your home
+# directory or in some project directory.
+#
+# RuboCop will start looking for the configuration file in the directory
+# where the inspected file is and continue its way up to the root directory.
+#
+# See https://docs.rubocop.org/rubocop/configuration
+
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 3.1.2
+  Exclude:
+    - 'bin/*'
+    - 'db/*'
+    - 'vendor/**/*'
+    - 'db/migrate/*'
+    - 'test/*'
+    - 'test/channels/*'
+    - 'test/controllers/*'
+    - 'test/controllers/valuation/*'
+    - 'test/fixtures/*'
+    - 'test/integrations/*'
+    - 'test/mailers/*'
+    - 'test/models/*'
+    - 'app/Services/*'
+    - 'app/controllers/devise_token_auth_override/*'
+    - 'config/initializers/devise.rb'
+  NewCops: disable
+
+Layout/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Style/HashLikeCase:
+  Enabled: true
+  MinBranchesCount: 4
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Max: 10
