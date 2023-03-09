@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.1'
 
+gem 'devise_token_auth'
 gem 'bootsnap', require: false
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
